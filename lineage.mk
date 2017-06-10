@@ -1,6 +1,5 @@
 # Release name
 PRODUCT_RELEASE_NAME := Samsung Galaxy Tab E
-CM_BUILDTYPE := NIGHTLY
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 800
