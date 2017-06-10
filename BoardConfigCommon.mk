@@ -19,8 +19,7 @@ LOCAL_PATH := device/samsung/gte-common
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_gte
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_gte.cpp
+TARGET_LIBINIT_MSM8916_DEFINES_FILE := $(LOCAL_PATH)/init/init_gte.cpp
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := false
