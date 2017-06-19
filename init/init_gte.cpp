@@ -52,6 +52,11 @@ void init_target_properties(void)
 		model = (char *)"SM-T560NU";
 		network_type=WIFI_DEVICE;
 	}
+	else if (strstr(bootloader,"T550")) {
+		device = (char *)"gt510wifi";
+		model = (char *)"SM-T550";
+		network_type=WIFI_DEVICE;
+	}
 	else {
 		return;
 	}
