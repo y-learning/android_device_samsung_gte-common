@@ -57,6 +57,11 @@ void init_target_properties(void)
 		model = (char *)"SM-T550";
 		network_type=WIFI_DEVICE;
 	}
+	else if (strstr(bootloader,"T350")) {
+		device = (char *)"gt58wifi";
+		model = (char *)"SM-T350";
+		network_type=WIFI_DEVICE;
+	}
 	else {
 		return;
 	}
