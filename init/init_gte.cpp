@@ -46,14 +46,18 @@ void init_target_properties(void)
 	std::string bootloader = property_get("ro.bootloader");
 
 	if (bootloader.find("T377P") == 0) {
+		build_id = (char *)"MMB29M";
 		device = (char *)"gtesqltespr";
 		model = (char *)"SM-T377P";
 		network_type=CDMA_DEVICE;
+		version_release = (char *)"6.0.1";
 	}
 	else if (bootloader.find("T560NUU") == 0) {
+		build_id = (char *)"MMB29M";
 		device = (char *)"gtelwifiue";
 		model = (char *)"SM-T560NU";
 		network_type=WIFI_DEVICE;
+		version_release = (char *)"6.0.1";
 	}
 	else if (bootloader.find("T550") == 0) {
 		device = (char *)"gt510wifi";
