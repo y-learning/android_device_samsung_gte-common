@@ -31,53 +31,35 @@
 
 void init_target_properties(void)
 {
-	char *bootloader_str = NULL;
-	char *build_id = NULL;
 	char *device = NULL;
 	char *model = NULL;
-	char *name = NULL;
-	char *operator_alpha = NULL;
-	char *operator_numeric = NULL;
-	char *version_release = NULL;
 
-	int network_type = 1;
-
-	/* get the bootloader string */
 	std::string bootloader = android::base::GetProperty("ro.bootloader", "");
 
 	if (bootloader.find("T377P") == 0) {
-		build_id = (char *)"MMB29M";
 		device = (char *)"gtesqltespr";
 		model = (char *)"SM-T377P";
-		network_type=CDMA_DEVICE;
-		version_release = (char *)"6.0.1";
+		set_cdma_properties("Chameleon", "310000", "10");
 	}
 	else if (bootloader.find("T560NUU") == 0) {
-		build_id = (char *)"MMB29M";
 		device = (char *)"gtelwifiue";
 		model = (char *)"SM-T560NU";
-		network_type=WIFI_DEVICE;
-		version_release = (char *)"6.0.1";
+		set_wifi_properties();
 	}
 	else if (bootloader.find("T550") == 0) {
 		device = (char *)"gt510wifi";
 		model = (char *)"SM-T550";
-		network_type=WIFI_DEVICE;
+		set_wifi_properties();
 	}
 	else if (bootloader.find("T350") == 0) {
 		device = (char *)"gt58wifi";
 		model = (char *)"SM-T350";
-		network_type=WIFI_DEVICE;
+		set_wifi_properties();
 	}
 	else {
 		return;
 	}
 
-	/* make sure device name is set */
-	if (name == NULL)
-		name = device;
-
 	/* set the properties */
-	set_target_properties(build_id, bootloader_str, name, device, model,
-		       network_type, operator_alpha, operator_numeric, version_release);
+	set_target_properties(device, model);
 }
