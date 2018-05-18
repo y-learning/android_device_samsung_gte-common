@@ -56,6 +56,11 @@ void init_target_properties(void)
 		model = (char *)"SM-T350";
 		set_wifi_properties();
 	}
+	else if (bootloader.find("T357T") == 0) {
+		device = (char *)"gt58ltetmo";
+		model = (char *)"SM-T357T";
+		set_gsm_properties();
+	}
 	else {
 		return;
 	}
