@@ -13,10 +13,10 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 #
-LOCAL_PATH := device/samsung/gte-common
-
 # Inherit from common
 include device/samsung/msm8916-common/BoardConfigCommon.mk
+
+LOCAL_PATH := device/samsung/gte-common
 
 # Audio
 USE_QCOM_MIXER_PATHS := 1
